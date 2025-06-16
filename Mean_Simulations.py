@@ -181,7 +181,7 @@ def run_single_simulation(dk_dist_mat, dk_con_mat_SL, speed, gc_val, md_val, a_v
             'SE_info': mean_SE,
         }
 
-        np.savez('Mean_simulation_results/SL_simulation_Young_SC_results_C{:.2f}_md{:.1f}_a{:.2f}.npz'.format(gc_val,md_val,a_val), **Simulation_Results)
+        np.savez('Mean_simulation_results/SL_simulation_results_C{:.2f}_md{:.1f}_a{:.2f}.npz'.format(gc_val,md_val,a_val), **Simulation_Results)
         #np.savez('Mean_simulation_results/DMN_SL_simulation_results_C{:.2f}_md{:.1f}_a{:.2f}.npz'.format(gc_val,md_val,a_val), **DMN_Simulation_Results)
         
 
