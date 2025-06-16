@@ -3,8 +3,8 @@ import os
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-filepath_in='/vol/specs04/vivek/camcan/aec_empirical/'
-filepath_out='/vol/specs07/BasDrost/emperical_data/Mean_matrices/'
+filepath_in= 'Location of empirical FC'
+filepath_out= 'Location where saved'
 
 indices_label_order = [0, 2, 4, 6, 8, 12, 14, 16, 20, 22, 24, 26, 28, 30, 34, 32, 36, 38, 40, 42, 44, 46, 
                        48, 50, 52, 54, 56, 58, 60, 62, 10, 64, 66, 18, 1, 3, 5, 7, 9, 13, 15, 17, 21, 23, 
@@ -17,8 +17,8 @@ def Calculate_mean_FC():
     FC_samples_youth=[]
     FC_samples_elder=[]
     for file in range(len(youth)):
-        y_data= np.load(os.path.join(filepath_in, f'{youth[file]}_aec.npy'))
-        e_data= np.load(os.path.join(filepath_in, f'{elder[file]}_aec.npy'))
+        y_data= np.load(os.path.join(filepath_in, f'{youth[file]}_aec.npy')) #adjust to how the FC are called
+        e_data= np.load(os.path.join(filepath_in, f'{elder[file]}_aec.npy')) #adjust to how the FC are called
 
         y_data=y_data[np.ix_(indices_label_order,indices_label_order)]
         e_data=e_data[np.ix_(indices_label_order,indices_label_order)]
