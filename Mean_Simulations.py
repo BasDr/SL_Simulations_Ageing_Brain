@@ -8,7 +8,7 @@ import concurrent.futures
 import scipy.signal as sig
 import scipy.stats as stat
 
-os.chdir('/vol/specs07/BasDrost/SL_simulation/')
+os.chdir('Folder of code')
 
 
 lowcut=8.0
@@ -18,14 +18,14 @@ b,a=sig.butter(order, [lowcut, highcut], btype='band', output='ba', fs=1000)
 
 DMN = [8,10,12,14,21,23,24,42,44,46,48,55,57,58]
 
-MeanFC_youth = np.load('/vol/specs07/BasDrost/emperical_data/Mean_matrices/MeanFC_youth.npy')
-MeanFC_elder = np.load('/vol/specs07/BasDrost/emperical_data/Mean_matrices/MeanFC_elder.npy')
+MeanFC_youth = np.load('location mean FC younger population')
+MeanFC_elder = np.load('location mean FC older population')
 MeanFC_youth_DMN = MeanFC_youth[DMN, :][:, DMN]
 MeanFC_elder_DMN = MeanFC_elder[DMN, :][:, DMN]
 
 # Load Connectivity Matrices
-dk_dist_mat = np.load('/vol/specs07/BasDrost/Length_DesikanKilliany_young.npy')
-dk_con_mat = np.load('/vol/specs07/BasDrost/SC_DesikanKilliany_young.npy')
+dk_dist_mat = np.load('Location lengths SC')
+dk_con_mat = np.load('Location counts SC')
 
 
 dk_con_mat[dk_con_mat < 10] = 0 # Removes negligible connections with less than 10 fibers
